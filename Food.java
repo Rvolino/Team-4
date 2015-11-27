@@ -9,10 +9,14 @@
 
 package q4;
 
-public class Board {
-	char[][] cells;
+public class Food {
+	public int x;
+	public int y;
+	public boolean isEaten;
 	
-	public Board() {
-		cells = new char[5][10];
+	public Food() {
+		isEaten = false;
+		x = 7;
+		y = 3;
 	}
 }

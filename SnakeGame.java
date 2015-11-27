@@ -1,15 +1,18 @@
+// TEAM 4
+// Brad Adams, Robert Deetz, Ryan Volino
+// brad.adams001@umb.edu
+// usmcdeetz@gmail.com
+// ryan.volino@gmail.com
+// CS114
+// Assignment 5
+// Question 4
+
 package q4;
 
-import java.util.Scanner;
 
 public class SnakeGame {
 
 	public static void main(String[] args) {
-		String header;
-		String footer;
-		String command;
-		int points = 5;
-		Scanner input = new Scanner(System.in);
 		
 		System.out.println("-----------------------------");
 		System.out.println("---  S N A K E   G A M E  ---");
@@ -22,17 +25,20 @@ public class SnakeGame {
 		System.out.println("W UP");
 		System.out.println("S DOWN");
 
+		String header;
+		String footer;
+		String command;
+		int points = 5;
+
+		Snake snake = new Snake();
+		Board board = new Board();
+		
 		// Outer Loop
 		while (points > 0) {
 			header = "Points to Eat: " + points;
 			footer = "Enter Command (Ex. 2A): ";
-			
-			
-			// Create objects: Snake, Food, Board.
-			Snake snake = new Snake();
+	
 			Food food = new Food();
-			Board board = new Board();
-			
 			
 			// Layout Board
 			// Initialize with empty space.
@@ -59,10 +65,10 @@ public class SnakeGame {
 				System.out.println();
 			}
 			System.out.print(footer);
-			command = input.nextLine();
+			
 			System.out.println();
 			
-			snake.move(command);
+			snake.move();
 			
 			points--;
 				
