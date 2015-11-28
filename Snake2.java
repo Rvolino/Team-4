@@ -11,20 +11,21 @@ package q4;
 
 import java.util.Scanner;
 
-public class Snake {
+public class Snake2 {
 	public int x;
 	public int y;
 	
-	public Snake() {
+	public Snake2() {
 		x = (int)(Math.random() * 10);
 		y = (int)(Math.random() * 5);
 	}
 	
 	public void move() {
+		Scanner input = new Scanner(System.in);
 		// Obtain new coordinates and make sure they are in range.
 		int newX = -1, newY = -1;
 		while (newX < 0 || newX > 9 || newY < 0 || newY > 4) {
-			Scanner input = new Scanner(System.in);
+			
 			String command = input.nextLine();
 			command = command.toUpperCase();
 			// Validate command.
@@ -61,11 +62,9 @@ public class Snake {
 				
 			}
 		}
-//		System.out.println("OldX " + x);
-//		System.out.println("OldY " + y);
-//		System.out.println("NewX " + newX);
-//		System.out.println("NewY " + newY);
-		//x = newX;
-		//y = newY;
+
+		
+		x = newX;
+		y = newY;
 	}
 }

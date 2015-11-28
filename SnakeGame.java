@@ -30,7 +30,7 @@ public class SnakeGame {
 		String command;
 		int points = 5;
 
-		Snake snake = new Snake();
+		Snake2 snake = new Snake2();
 		Board board = new Board();
 		
 		// Outer Loop
@@ -54,6 +54,7 @@ public class SnakeGame {
 			// Place Food.
 			board.cells[food.y][food.x] = 'o';
 			
+			System.out.println();
 			System.out.println("-----------------------------");
 			System.out.println(header);
 			
@@ -70,7 +71,11 @@ public class SnakeGame {
 			
 			snake.move();
 			
-			points--;
+			if (snake.x == food.x && snake.y == food.y) {
+				System.out.print("Food Eaten!");
+				points--;
+			}
+		
 				
 		}
 
