@@ -30,8 +30,10 @@ public class SnakeGame {
 		String command;
 		int points = 5;
 
-		Snake2 snake = new Snake2();
+		Snake snake = new Snake();
 		Board board = new Board();
+		
+		new GUI();
 		
 		// Outer Loop
 		while (points > 0) {
@@ -49,10 +51,10 @@ public class SnakeGame {
 			}
 			
 			// Place Snake.
-			board.cells[snake.y][snake.x] = '|';
+			board.cells[snake.y][snake.x] = 'o';
 			
 			// Place Food.
-			board.cells[food.y][food.x] = 'o';
+			board.cells[food.y][food.x] = 'x';
 			
 			System.out.println();
 			System.out.println("-----------------------------");
@@ -61,7 +63,7 @@ public class SnakeGame {
 			// Print Board.
 			for (int i = 0; i < board.cells.length; i++) {
 				for (int j = 0; j < board.cells[0].length; j++) {
-					System.out.print(board.cells[i][j]);
+					System.out.flush(); System.out.print(board.cells[i][j]);
 				}
 				System.out.println();
 			}
