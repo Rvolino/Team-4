@@ -32,6 +32,7 @@ public class SnakeGame {
 
 		Snake snake = new Snake();
 		Board board = new Board();
+		Food food = new Food();
 		
 		new GUI();
 		
@@ -40,7 +41,7 @@ public class SnakeGame {
 			header = "Points to Eat: " + points;
 			footer = "Enter Command (Ex. 2A): ";
 	
-			Food food = new Food();
+			
 			
 			// Layout Board
 			// Initialize with empty space.
@@ -74,8 +75,14 @@ public class SnakeGame {
 			snake.move();
 			
 			if (snake.x == food.x && snake.y == food.y) {
-				System.out.print("Food Eaten!");
 				points--;
+				if (points == 0) {
+					System.out.print("ALL FOOD EATEN!");
+				}
+				else {
+					System.out.print("Food Eaten!");
+				}
+				food = new Food();
 			}
 		
 				

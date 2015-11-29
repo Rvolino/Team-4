@@ -9,24 +9,15 @@
 
 package q4;
 
-
-
 public class Food {
 
 	public int x;
 	public int y;
 
-	public boolean isEaten;
-
 	public Food() {
 
 		x = (int) (Math.random() * 10);
 		y = (int) (Math.random() * 5);
-
-		isEaten = false;
-
-
 	}
-
 }
 
