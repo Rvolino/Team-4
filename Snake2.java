@@ -7,7 +7,7 @@
 // Assignment 5
 // Question 4
 
-package q4;
+package snake;
 
 import java.util.Scanner;
 

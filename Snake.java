@@ -7,25 +7,30 @@
 // Assignment 5
 // Question 4
 
-package q4;
+package snake;
 
 import java.util.Scanner;
 
 public class Snake {
 	public int x;
 	public int y;
-	
+	public int newX;
+	public int newY;
+	public char direction;
+
 	public Snake() {
 		x = (int)(Math.random() * 10);
 		y = (int)(Math.random() * 5);
+
 	}
-	
+
 	public void move() {
 		Scanner input = new Scanner(System.in);
 		// Obtain new coordinates and make sure they are in range.
-		int newX = -1, newY = -1;
+		newX = -1;
+		newY = -1;
 		while (newX < 0 || newX > 9 || newY < 0 || newY > 4) {
-			
+
 			String command = input.nextLine();
 			command = command.toUpperCase();
 			// Validate command.
@@ -36,36 +41,37 @@ public class Snake {
 			}
 			char dist = command.charAt(0);
 			int distance = Character.getNumericValue(dist);
-			char direction = command.charAt(1);
+			direction = command.charAt(1);
 			//System.out.println("Distance: " + distance + direction);
 			switch (direction) {
-				case 'A':
-					// Left
-					newX = x - distance;
-					newY = y;
-					break;
-				case 'D':
-					// Right
-					newX = x + distance;
-					newY = y;
-					break;
-				case 'W':
-					// Up
-					newX = x;
-					newY = y - distance;
-					break;
-				case 'S':
-					// Down
-					newX = x;
-					newY = y + distance;
-					break;
-				
+			case 'A':
+				// Left
+				newX = x - distance;
+				newY = y;
+
+				break;
+			case 'D':
+				// Right
+				newX = x + distance;
+				newY = y;
+				break;
+			case 'W':
+				// Up
+				newX = x;
+				newY = y - distance;
+				break;
+			case 'S':
+				// Down
+				newX = x;
+				newY = y + distance;
+				break;
+
 			}
+
 		}
 
-		
 		x = newX;
 		y = newY;
-		
+
 	}
 }
